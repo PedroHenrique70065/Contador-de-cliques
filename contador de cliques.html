@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <link rel="stylesheet" href="contador de cliques.css">
+    <style>
+        .luz{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #333;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- frontend do codigo de clique -->
+     
+    <section>
+        <h1 id="titulo">Contador de cliques</h1>
+        <p id="cliques">Você clicou 0 vezes!</p>
+        <button onclick="botao()">Aumentador de cliques</button>
+        <button onclick="botaom()">Diminuidor de clique</button>
+        <button onclick="reset()">Reset</button>
+        <button onclick="surpresa()">surpresa</button>
+        <p id="historico"></p>
+    </section>
+    <script>
+        let contador = 0;
+        function botao(){
+            contador++;
+            document.getElementById("cliques").innerText = "Você clicou " + contador + " vezes!";
+            }
+        function botaom(){
+            contador--;     
+            document.getElementById("cliques").innerText = "Você clicou " + contador + " vezes!";
+        }
+        function reset(){
+            contador = 0;
+            document.getElementById("cliques").innerText = "Voce clicou "+ contador + " vezes!";
+            document.getElementById("historico").innerText = "";
+        }
+        function surpresa(){
+            let surpresa = Math.floor(Math.random() * 100000000) + 1;
+            document.getElementById("cliques").innerText = "O numero surpresa é " + surpresa + "";
+        } 
+    </script>
+</body>
+</html>
